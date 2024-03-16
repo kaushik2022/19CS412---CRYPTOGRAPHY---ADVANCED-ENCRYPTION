@@ -214,9 +214,11 @@ print("decrypted string: ", decMessage)
 ```
 ## OUTPUT:
 
-<img width="756" alt="image" src="https://github.com/AlluguriSrikrishnateja/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/118343892/23e74c08-7cea-4381-b9fe-97e247b17470">
+![Screenshot 2024-03-16 093518](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/f7ca5265-b4fd-46fe-bebd-8ab13a4e3fde)
+
 
 ## RESULT:
+:
 
 Thus the data encryption standard algorithm had been implemented
 successfully.
