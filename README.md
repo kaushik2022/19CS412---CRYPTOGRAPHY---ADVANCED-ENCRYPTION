@@ -218,7 +218,7 @@ print("decrypted string: ", decMessage)
 
 
 ## RESULT:
-:
+
 
 Thus the data encryption standard algorithm had been implemented
 successfully.
