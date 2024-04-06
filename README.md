@@ -85,7 +85,8 @@ return 0;
 ```
 ## OUTPUT:
 
-![image](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/a06e0ba7-5b60-44ee-b26b-9911d025c158)
+![image](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/9bea7adc-1379-4430-833e-eb4a46cd92b4)
+
 
 
 ## RESULT :
