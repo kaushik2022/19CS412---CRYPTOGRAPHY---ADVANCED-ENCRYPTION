@@ -168,7 +168,9 @@ return 0;
 ```
 ## OUTPUT:
 
-![Uploading image.png…]()
+![image](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/afd72d4a-196c-47b6-a334-45dade9be21b)
+
+
 
 
 
