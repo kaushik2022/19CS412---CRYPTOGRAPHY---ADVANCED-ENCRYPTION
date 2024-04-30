@@ -1,5 +1,6 @@
- ## IMPLEMENTATION OF RSA
- # AIM :
+ ## ex :2 ADVANCED-ENCRYPTION
+ ## 2a.IMPLEMENTATION OF RSA
+ ## AIM :
  To write a C program to implement the RSA encryption algorithm.
 
 ## ALGORITHM:
@@ -98,7 +99,7 @@ implemented successfully
 
 
 
-## IMPLEMENTATION OF DIFFIE HELLMAN KEY EXCHANGE ALGORITHM
+## 2b.IMPLEMENTATION OF DIFFIE HELLMAN KEY EXCHANGE ALGORITHM
 
 ## AIM:
 
@@ -183,7 +184,7 @@ implemented using C.
 
 
 
-## IMPLEMENTATION OF DES ALGORITHM
+## 2c.IMPLEMENTATION OF DES ALGORITHM
 
 ## AIM:
 To write a program to implement Data Encryption Standard (DES)
