@@ -1,6 +1,5 @@
- ## ex :2 ADVANCED-ENCRYPTION
- ## 2a.IMPLEMENTATION OF RSA
- ## AIM :
+ ## IMPLEMENTATION OF RSA
+ # AIM :
  To write a C program to implement the RSA encryption algorithm.
 
 ## ALGORITHM:
@@ -22,6 +21,7 @@ STEP-7: Decryption is done as cipherdmod n.
 
 ## PROGRAM:
 ```
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -83,23 +83,105 @@ int decryptedMessage = decrypt(ciphertext, d, n);
 printf("Decrypted message: %d\n", decryptedMessage);
 return 0;
 }
+
 ```
 ## OUTPUT:
 
-![image](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/9bea7adc-1379-4430-833e-eb4a46cd92b4)
+![a1](https://github.com/Samuelmariappan/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/119393030/bd65e5da-b0d8-4b20-9115-1c66f571315c)
 
 
 
 ## RESULT :
 
 Thus the C program to implement RSA encryption technique had been
-implemented successfully
+implemented successfully.
 
 
+## IMPLEMENTATION OF AES
+
+## AIM:
+
+To use Advanced Encryption Standard (AES) Algorithm for a practical
+application like URL Encryption.
+## ALGORITHM:
+
+1. AES is based on a design principle known as a substitution–permutation.
+2. AES does not use a Feistel network like DES, it uses variant of Rijndael.
+3. It has a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits.
+4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
+## PROGRAM:
+
+## AES.java
+```
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.Base64;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+public class AES {
+ private static SecretKeySpec secretKey;
+ private static byte[] key;
+ public static void setKey(String myKey) {
+ MessageDigest sha = null;
+ try {
+ key = myKey.getBytes("UTF-8");
+ sha = MessageDigest.getInstance("SHA-1");
+ key = sha.digest(key);
+ key = Arrays.copyOf(key, 16);
+ secretKey = new SecretKeySpec(key, "AES");
+ } catch (NoSuchAlgorithmException e) {
+ e.printStackTrace();
+ } catch (UnsupportedEncodingException e) {
+ e.printStackTrace();
+ }
+ }
+ public static String encrypt(String strToEncrypt, String secret) {
+ try {
+ setKey(secret);
+ Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+ cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+ return
+Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
+ } catch (Exception e) {
+ System.out.println("Error while encrypting: " + e.toString());
+ }
+ return null;
+ }
+ public static String decrypt(String strToDecrypt, String secret) {
+ try {
+ setKey(secret);
+ Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+ cipher.init(Cipher.DECRYPT_MODE, secretKey);
+ return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
+ } catch (Exception e) {
+ System.out.println("Error while decrypting: " + e.toString());
+ }
+ return null;
+ }
+ public static void main(String[] args) {
+ final String secretKey = "annaUniversity";
+ String originalString = "www.annauniv.edu";
+ String encryptedString = AES.encrypt(originalString, secretKey);
+ String decryptedString = AES.decrypt(encryptedString, secretKey);
+ System.out.println("URL Encryption Using AES Algorithm\n------------");
+ System.out.println("Original URL : " + originalString);
+ System.out.println("Encrypted URL : " + encryptedString);
+ System.out.println("Decrypted URL : " + decryptedString);
+ }
+}
+```
+## OUTPUT:
+
+![image](https://github.com/Samuelmariappan/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/119393030/73019243-aa80-4cc6-a4da-2c154127ec8a)
 
 
+## RESULT:
 
-## 2b.IMPLEMENTATION OF DIFFIE HELLMAN KEY EXCHANGE ALGORITHM
+Thus the Implementation of AES had been implemented successfully.
+
+## IMPLEMENTATION OF DIFFIE HELLMAN KEY EXCHANGE ALGORITHM
 
 ## AIM:
 
@@ -166,12 +248,11 @@ printf("Secret key for the Alice is : %lld\n", ka);
 printf("Secret Key for the Bob is : %lld\n", kb);
 return 0;
 }
+
 ```
 ## OUTPUT:
 
-![image](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/afd72d4a-196c-47b6-a334-45dade9be21b)
-
-
+![a2](https://github.com/Samuelmariappan/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/119393030/7cce7c2d-53d8-4d99-90f5-f4f0547f3ad8)
 
 
 
@@ -184,7 +265,7 @@ implemented using C.
 
 
 
-## 2c.IMPLEMENTATION OF DES ALGORITHM
+## IMPLEMENTATION OF DES ALGORITHM
 
 ## AIM:
 To write a program to implement Data Encryption Standard (DES)
@@ -207,6 +288,7 @@ same process for the remaining plain text characters.
 
 ```
 from cryptography.fernet import Fernet
+print("Enter the string: ")
 message = input()
 key = Fernet.generate_key()
 fernet = Fernet(key)
@@ -217,14 +299,14 @@ print("encrypted string: ", encMessage)
 decMessage = fernet.decrypt(encMessage).decode()
  
 print("decrypted string: ", decMessage)
+
 ```
 ## OUTPUT:
 
-![Screenshot 2024-03-16 093518](https://github.com/kaushik2022/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/129837020/f7ca5265-b4fd-46fe-bebd-8ab13a4e3fde)
+![a3](https://github.com/Samuelmariappan/19CS412---CRYPTOGRAPHY---ADVANCED-ENCRYPTION/assets/119393030/3418bb57-fe48-4d95-9c66-aa610d3c588b)
 
 
 ## RESULT:
-
 
 Thus the data encryption standard algorithm had been implemented
 successfully.
